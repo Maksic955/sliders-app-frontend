@@ -1,0 +1,85 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.containerCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90vw;
+  height: 70rem;
+  border-radius: 20px;
+  background-color: $color-card-background;
+
+  @include respond(mobile) {
+    display: flex;
+    flex-direction: column;
+    height: 100rem;
+  }
+}
+
+.leftWrapper {
+  & img {
+    aspect-ratio: 1/1;
+    width: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    border-radius: 20px 0 0 20px;
+    object-fit: cover;
+
+    @include respond(mobile) {
+      height: fit-content;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+}
+
+.rightWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem;
+  border-radius: 0 20px 20px 0;
+
+  & h2 {
+    font-size: 8rem;
+    line-height: 7.2rem;
+
+    @include respond(mobile) {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+  }
+
+  & h3  {
+    font-size: 2rem;
+
+    @include respond(mobile) {
+      font-size: 1.7rem;
+    }
+  }
+
+  & p {
+    font-size: 2rem;
+    line-height: 3.2rem;
+
+    @include respond(mobile) {
+      font-size: 1.7rem;
+      line-height: 2.6rem;
+    }
+  }
+
+  @include respond(mobile) {
+    padding: 2rem;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  white-space: pre-wrap;
+}
+
+.audio {
+  width: 100%;
+  margin-top: 2rem;
+}
+
