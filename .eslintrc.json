@@ -1,3 +1,52 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:import/warnings",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"],
+        "map": [["@", "./src"]]
+      }
+    }
+  },
+  "rules": {
+    "import/no-named-as-default": 0,
+    "import/namespace": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/order": [
+      2,
+      {
+        "groups": [
+          ["external", "builtin"],
+          "internal",
+          "parent",
+          ["index", "sibling"],
+          "object"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ]
+      }
+    ],
+    "no-unused-vars": 1
+  }
 }

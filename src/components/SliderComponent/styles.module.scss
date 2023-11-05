@@ -1,0 +1,65 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.container {
+  overflow-y: visible !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17rem;
+  width: 100vw;
+  color: $color-font;
+  font-size: 5rem;
+}
+
+.cardWrapper {
+  position: sticky !important;
+  top: 8rem;
+
+  &:last-child {
+    position: relative !important;
+    top: -11.8rem !important;
+    margin-top: 0 !important;
+
+    @include respond(mobile) {
+      top: -2rem !important;
+    }
+  }
+
+  @include respond(mobile) {
+    top: 4rem;
+  }
+}
+
+.buttonPrev {
+  position: fixed;
+  top: 3rem;
+  right: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.buttonNext {
+  position: fixed;
+  bottom: 3rem;
+  right: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
